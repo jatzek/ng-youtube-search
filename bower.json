@@ -1,0 +1,22 @@
+{
+  "name": "ng-yt-search",
+  "authors": [
+    "Jacek Chudziński <chudzinskijacek@gmail.com>"
+  ],
+  "description": "Simple angular service for youtube searching",
+  "main": "netgenes.ng-youtube-search.js",
+  "moduleType": [],
+  "keywords": [
+    "youtube",
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
