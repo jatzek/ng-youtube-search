@@ -95,6 +95,27 @@
 
             };
         })
+        .constant('extractYtId', function( url ) {
+
+            var pattern = /v\=([^&]+)/;
+
+            if (!pattern.test(url)) {
+                return null;
+            }
+
+            return pattern.exec(url)[1];
+        })
+        .factory('ytBrowserToEmbed', function( extractYtId ) {
+
+            return function( url ) {
+
+                var id;
+                id = extractYtId(url);
+
+                return '//www.youtube.com/embed/' + id;
+            }
+
+        })
         .filter('ytTimeFormat', function() {
 
             return function(value) {
@@ -125,6 +146,6 @@
                 return parts.join(':');
 
             }
-        })
+        });
 
 })( window.angular );
