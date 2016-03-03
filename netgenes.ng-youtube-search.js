@@ -105,16 +105,24 @@
 
             return pattern.exec(url)[1];
         })
-        .factory('ytBrowserToEmbed', function( extractYtId ) {
+        .constant('checkYtId', function( id ) {
+
+            var pattern = /^([\w\_\-]+)$/;
+            if (!pattern.test(id)) {
+                return null;
+            }
+
+            return pattern.exec(id)[0];
+        })
+        .factory('ytBrowserToEmbed', function( checkYtId, extractYtId ) {
 
             return function( url ) {
 
                 var id;
-                id = extractYtId(url);
+                id = checkYtId( url ) || extractYtId(url);
 
                 return '//www.youtube.com/embed/' + id;
             }
-
         })
         .filter('ytTimeFormat', function() {
 
@@ -141,7 +149,6 @@
                 seconds = sRx.exec(value) ? sRx.exec(value)[1] : '00';
                 fSeconds = ('00'+seconds).slice(-2);
                 parts.push(fSeconds);
-
 
                 return parts.join(':');
 
