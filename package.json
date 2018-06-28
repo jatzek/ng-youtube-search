@@ -1,0 +1,23 @@
+{
+  "name": "ng-youtube-search",
+  "version": "1.0.0",
+  "description": "youtube search content helper",
+  "main": "netgenes.ng-youtube-search.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatzek/ng-youtube-search.git"
+  },
+  "keywords": [
+    "angular",
+    "youtube"
+  ],
+  "author": "Net Genes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jatzek/ng-youtube-search/issues"
+  },
+  "homepage": "https://github.com/jatzek/ng-youtube-search#readme"
+}
